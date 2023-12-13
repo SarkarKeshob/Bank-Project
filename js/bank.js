@@ -1,47 +1,53 @@
 // ------------------------------------------------------------------------
+// common part
+let depositButton=document.getElementById('deposit-button');
+let withdrawButton=document.getElementById('withdraw-button');
+let deposit=document.getElementById('deposit');
+let withdraw=document.getElementById('withdraw');
+let previousDeposit=document.getElementById('previous-deposit');
+let balance=document.getElementById('balance');
+let previousWithdraw=document.getElementById('previous-withdraw');
+// -----------------------------------------------------------------------------
+
 
 // Account part
 
     // Deposit Part
 
 
-let depositButton=document.getElementById('deposit-button');
-let withdrawButton=document.getElementById('withdraw-button');
-let balance=document.getElementById('balance');
-let deposit=document.getElementById('deposit');
 
 depositButton.addEventListener('click', function(){
     
     let depositValue=deposit.value ;
     if(!isNaN(depositValue)&& (depositValue !=='')){
         depositValue=parseFloat(depositValue);
-        let previousDeposit=document.getElementById('previous-deposit');
-        let previousDepositValue = parseFloat(previousDeposit.innerText);
+        let previousDepositValue=giveValue(previousDeposit);
         let newPreviousDepositValue=previousDepositValue+depositValue;
-        let balanceValue=balance.innerText;
-        balanceValue=parseFloat(balanceValue)+depositValue;
-        balance.innerText=balanceValue.toFixed(2)
         previousDeposit.innerText= newPreviousDepositValue.toFixed(2);
+        let balanceValue=giveValue(balance);
+        balanceValue=balanceValue+depositValue;
+        balance.innerText=balanceValue.toFixed(2)
+ 
         deposit.value='';
     }
 
     else{
         
-        alert(depositValue+' Is not a number. Please Insert a Valid One')
+        alert(depositValue+' Is not a number. Please Insert a Valid One In The Deposit Box')
         deposit.value='';
     }
 })
 
-
+// ---------------------------------------------------------------------------
+// withdraw part
 withdrawButton.addEventListener('click',function(){
     let withdrawValue=withdraw.value ;
     if(!isNaN(withdrawValue) && (withdrawValue!=='') ){
         withdrawValue=parseFloat(withdrawValue);
-        let previousWithdraw=document.getElementById('previous-withdraw');
-        let previousWithdrawValue=parseFloat(previousWithdraw.innerText);
+        let previousWithdrawValue=giveValue(previousWithdraw);
         let newPreviousWithdrawValue=previousWithdrawValue+withdrawValue;
-        let balanceValue=balance.innerText;
-        balanceValue=parseFloat(balanceValue)-withdrawValue;
+        let balanceValue=giveValue(balance);
+        balanceValue=balanceValue-withdrawValue;
         if(balanceValue<0){
             alert('insufficient Balance');
             withdraw.value='';
@@ -55,7 +61,7 @@ withdrawButton.addEventListener('click',function(){
 
     else{
         
-        alert(withdrawValue+' Is not a number. Please Insert a Valid One')
+        alert(withdrawValue+' Is not a number. Please Insert a Valid One In The Withdraw Box')
         withdraw.value='';
     }
 })
