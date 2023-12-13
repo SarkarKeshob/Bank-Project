@@ -1,0 +1,22 @@
+input::placeholder{
+    color: rgba(24, 20, 20, 0.6);
+    font-size: 20px;
+    
+}
+
+input:focus{
+    outline: none;
+}
+
+#password::placeholder{
+   font-size: 70px;
+   
+}
+
+#input-box p{
+    color: red;
+    font-size: 25px;
+    text-transform: uppercase;
+    text-align: center;
+}
+
