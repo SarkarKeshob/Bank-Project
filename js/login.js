@@ -3,12 +3,11 @@
 const myEmail= 'keshob.sarkar.shuvo@gmail.com';
 const myPassword='Chicingfuck270';
 
-const loginButton=document.getElementById('login-button');
+const loginButton=giveHtml('login-button');
 loginButton.addEventListener('click',function(){
-    const email=document.getElementById('email');
-    const password=document.getElementById('password');
-    const checkBox=document.getElementById('remember');
-    let showError = document.getElementById('show-error');
+    const email=giveHtml('email');
+    const password=giveHtml('password');
+    let showError = giveHtml('show-error');
 
 
     if((email.value.toLowerCase()===myEmail.toLowerCase()) && (password.value===myPassword)){
