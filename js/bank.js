@@ -1,12 +1,12 @@
 // ------------------------------------------------------------------------
 // common part
-let depositButton=document.getElementById('deposit-button');
-let withdrawButton=document.getElementById('withdraw-button');
-let deposit=document.getElementById('deposit');
-let withdraw=document.getElementById('withdraw');
-let previousDeposit=document.getElementById('previous-deposit');
-let balance=document.getElementById('balance');
-let previousWithdraw=document.getElementById('previous-withdraw');
+let depositButton=giveHtml('deposit-button');
+let withdrawButton=giveHtml('withdraw-button');
+let deposit=giveHtml('deposit');
+let withdraw=giveHtml('withdraw');
+let previousDeposit=giveHtml('previous-deposit');
+let balance=giveHtml('balance');
+let previousWithdraw=giveHtml('previous-withdraw');
 // -----------------------------------------------------------------------------
 
 

@@ -1,4 +1,8 @@
 function giveValue(input){
-    let inputValue=parseFloat(input.innerText);
-    return inputValue;
+    return (parseFloat(input.innerText));
+}
+
+function giveHtml(inputField){
+    
+    return (document.getElementById(inputField));
 }
