@@ -14,10 +14,6 @@ loginButton.addEventListener('click',function(){
     if((email.value.toLowerCase()===myEmail.toLowerCase()) && (password.value===myPassword)){
         window.location.href="bank.html"
     }
-    else if((email.value.toLowerCase()!==myEmail.toLowerCase()) && (password.value!==myPassword)){
-        
-        showError.innerText='Email & Password Both Are Wrong!!!'
-    }
 
     else if((email.value.toLowerCase()!==myEmail.toLowerCase()) && (password.value===myPassword)){
         
@@ -30,7 +26,7 @@ loginButton.addEventListener('click',function(){
         
     }
     else{
-        showError.innerText='Email & Password is not Filled'
+        showError.innerText='Email & Password Both Are Wrong!!!'
     }
 
 })
